@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -43,15 +41,44 @@ public class Main {
 
         baseballTeam.addPlayer(pat);
 
+        /* //tak nie wolno bo T extends Player, a string nie jest playerem, pozbywamy sie problemu z castowaniem w klasie Team :)
         Team<String> brokenTeam = new Team<>("this won't work");
         brokenTeam.addPlayer("no-one");
+        */
+
+        Team<SoccerPlayer> brokenTeam = new Team<>("this won't work");
+        brokenTeam.addPlayer(beckham);
+
+
+        Team<FootballPlayer> melbourne = new Team<>("Melbourne");
+        FootballPlayer banks = new FootballPlayer("Gordon");
+
+        melbourne.addPlayer(banks);
+
+        Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
+        Team<FootballPlayer> fremantle = new Team<>("Freemantle");
+
+        hawthorn.matchResult(fremantle,1,0);
+        hawthorn.matchResult(adelaideCrows,5,7);
 
 
 
+        System.out.println(hawthorn.getName()+ " rank is: "+hawthorn.ranking());
+        System.out.println(fremantle.getName()+ " rank is: "+fremantle.ranking());
+        System.out.println(adelaideCrows.getName()+ " rank is: "+adelaideCrows.ranking());
+
+        //celowy blad demonstracyjny czego nie wolno
+        //hawthorn.matchResult(baseballTeam,7,8);
 
 
+        System.out.println(adelaideCrows.compareTo(melbourne));
+        System.out.println(adelaideCrows.compareTo(hawthorn));
+        System.out.println(adelaideCrows.compareTo(fremantle));
+        System.out.println(fremantle.compareTo(adelaideCrows));
 
-        lalala<Double> la1 = new lalala<>();
+        //Twórczosc własna, niekursowa ;-)
+        System.out.println("===========================");
+        Pair<Double> la1 = new Pair<>();
 
         System.out.println(la1.getFirst()+ " "+ la1.getSecondl());
 
@@ -61,7 +88,7 @@ public class Main {
 
         System.out.println(la1.getFirst()+ " "+ la1.getSecondl());
 
-        lalala<String> la2 = new lalala<>("Andrzej","Dupa");
+        Pair<String> la2 = new Pair<>("Andrzej","Dupa");
 
         System.out.println(la2.getFirst()+ " "+ la2.getSecondl());
 

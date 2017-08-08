@@ -3,16 +3,16 @@ package com.company;
 /**
  * Created by PLPK on 04.08.2017.
  */
-public class lalala<T> {
+public class Pair<T> {
     private T first;
     private T secondl;
 
-    public lalala(T first, T secondl) {
+    public Pair(T first, T secondl) {
         this.first = first;
         this.secondl = secondl;
     }
 
-    public lalala() {
+    public Pair() {
     }
 
     public T getFirst() {
